@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        html { zoom: 0.7; }
+        html { zoom: 0.7; max-width: 100%; overflow-x: hidden; }
         @media (max-width: 768px) { html { zoom: 1; } }
 
         :root {
@@ -33,6 +33,7 @@
             scroll-behavior: smooth;
             margin: 0;
             overflow-x: hidden;
+            max-width: 100%;
         }
 
         .font-comfortaa { font-family: 'Comfortaa', cursive; }
@@ -125,6 +126,15 @@
         .boutique-card:hover { transform: scale(1.02); background: rgba(255, 255, 255, 0.05); }
         .boutique-card:hover::before { opacity: 1; animation: rotate-border 7s linear infinite; }
         @keyframes rotate-border { to { --angle: 360deg; } }
+        @media (max-width: 640px) {
+            .boutique-card {
+                width: calc(100vw - 48px);
+                height: auto;
+                min-height: 240px;
+                border-radius: 2rem;
+                padding: 1.5rem;
+            }
+        }
 
         .particle-canvas {
             position: absolute; inset: -150px;
@@ -146,6 +156,14 @@
         @media (max-width: 640px) {
             .modal-overlay { padding: 12px; align-items: flex-end; }
             .modal-content { padding: 20px; border-radius: 20px; max-height: 85vh; }
+            .roi-special-btn {
+                font-size: 0.9rem;
+                padding: 0.75rem 1.25rem;
+                max-width: 290px;
+                white-space: normal;
+                line-height: 1.4;
+            }
+            .roi-btn-container { padding: 10px; }
         }
 
         .roi-input {
@@ -207,7 +225,7 @@
 
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 bg-white shadow-md">
-        <div class="w-full px-10 py-4 flex items-center justify-between relative">
+        <div class="w-full px-4 md:px-10 py-4 flex items-center justify-between relative">
             <!-- Logo -->
             <div class="flex items-center shrink-0">
                 <img src="Pictures/Daylight.png" alt="Daylight Logo" class="w-16 h-16 rounded-lg">
@@ -246,7 +264,7 @@
                 <img src="Pictures/Daylight.png" alt="Daylight Logo" class="w-24 h-24 md:w-36 md:h-36 object-contain">
             </div>
         </div>
-        <h1 class="text-2xl sm:text-4xl md:text-7xl font-black mb-10 leading-snug tracking-tight text-white text-center w-full px-4 reveal" style="transition-delay: 0.15s">
+        <h1 class="text-xl sm:text-3xl md:text-7xl font-black mb-10 leading-snug tracking-tight text-white text-center w-full max-w-full px-4 reveal" style="transition-delay: 0.15s">
             כשהעסק הופך להיות חכם, <br>
             <span class="text-[#0f8b8d]">הוא לא מפסיק לעבוד בשבילך</span>
         </h1>
@@ -352,8 +370,8 @@
             <div class="relative space-y-20 py-4" style="z-index:1;">
 
                 <!-- Step 1 - right -->
-                <div class="flex justify-end">
-                    <div class="process-step bg-white/10 border border-white/20 rounded-3xl p-8 w-96 text-right hover:border-[#0f8b8d]/50 transition duration-300 reveal-left">
+                <div class="flex justify-center md:justify-end">
+                    <div class="process-step bg-white/10 border border-white/20 rounded-3xl p-5 md:p-8 w-full md:w-96 max-w-sm text-right hover:border-[#0f8b8d]/50 transition duration-300 reveal-left">
                         <div class="flex items-center justify-between mb-4">
                             <span class="w-9 h-9 rounded-full bg-[#0f8b8d] flex items-center justify-center text-white font-black text-base shadow-lg shadow-[#0f8b8d]/40">1</span>
                             <div class="text-4xl text-[#0f8b8d]"><i class="fa-solid fa-magnifying-glass"></i></div>
@@ -364,8 +382,8 @@
                 </div>
 
                 <!-- Step 2 - left -->
-                <div class="flex justify-start">
-                    <div class="process-step bg-white/10 border border-white/20 rounded-3xl p-8 w-96 text-right hover:border-[#0f8b8d]/50 transition duration-300 reveal-right">
+                <div class="flex justify-center md:justify-start">
+                    <div class="process-step bg-white/10 border border-white/20 rounded-3xl p-5 md:p-8 w-full md:w-96 max-w-sm text-right hover:border-[#0f8b8d]/50 transition duration-300 reveal-right">
                         <div class="flex items-center justify-between mb-4">
                             <span class="w-9 h-9 rounded-full bg-[#0f8b8d] flex items-center justify-center text-white font-black text-base shadow-lg shadow-[#0f8b8d]/40">2</span>
                             <div class="text-4xl text-[#0f8b8d]"><i class="fa-solid fa-pen-ruler"></i></div>
@@ -376,8 +394,8 @@
                 </div>
 
                 <!-- Step 3 - right -->
-                <div class="flex justify-end">
-                    <div class="process-step bg-white/10 border border-white/20 rounded-3xl p-8 w-96 text-right hover:border-[#0f8b8d]/50 transition duration-300 reveal-left">
+                <div class="flex justify-center md:justify-end">
+                    <div class="process-step bg-white/10 border border-white/20 rounded-3xl p-5 md:p-8 w-full md:w-96 max-w-sm text-right hover:border-[#0f8b8d]/50 transition duration-300 reveal-left">
                         <div class="flex items-center justify-between mb-4">
                             <span class="w-9 h-9 rounded-full bg-[#0f8b8d] flex items-center justify-center text-white font-black text-base shadow-lg shadow-[#0f8b8d]/40">3</span>
                             <div class="text-4xl text-[#0f8b8d]"><i class="fa-solid fa-code"></i></div>
@@ -388,8 +406,8 @@
                 </div>
 
                 <!-- Step 4 - left -->
-                <div class="flex justify-start">
-                    <div class="process-step bg-white/10 border border-white/20 rounded-3xl p-8 w-96 text-right hover:border-[#0f8b8d]/50 transition duration-300 reveal-right">
+                <div class="flex justify-center md:justify-start">
+                    <div class="process-step bg-white/10 border border-white/20 rounded-3xl p-5 md:p-8 w-full md:w-96 max-w-sm text-right hover:border-[#0f8b8d]/50 transition duration-300 reveal-right">
                         <div class="flex items-center justify-between mb-4">
                             <span class="w-9 h-9 rounded-full bg-[#0f8b8d] flex items-center justify-center text-white font-black text-base shadow-lg shadow-[#0f8b8d]/40">4</span>
                             <div class="text-4xl text-[#0f8b8d]"><i class="fa-solid fa-flask"></i></div>
@@ -400,8 +418,8 @@
                 </div>
 
                 <!-- Step 5 - right -->
-                <div class="flex justify-end">
-                    <div class="process-step bg-white/10 border border-[#0f8b8d]/50 rounded-3xl p-8 w-96 text-right shadow-lg shadow-[#0f8b8d]/20 reveal-left">
+                <div class="flex justify-center md:justify-end">
+                    <div class="process-step bg-white/10 border border-[#0f8b8d]/50 rounded-3xl p-5 md:p-8 w-full md:w-96 max-w-sm text-right shadow-lg shadow-[#0f8b8d]/20 reveal-left">
                         <div class="flex items-center justify-between mb-4">
                             <span class="w-9 h-9 rounded-full bg-[#0f8b8d] flex items-center justify-center text-white font-black text-base shadow-lg shadow-[#0f8b8d]/40">5</span>
                             <div class="text-4xl text-[#0f8b8d]"><i class="fa-solid fa-rocket"></i></div>
@@ -433,7 +451,7 @@
                     <p>
                         ויותר מזה, הבנתי שעסק שלא יטמיע שינויים כאלה, ישאר הרחק מאחור...
                     </p>
-                    <div class="p-10 border-r-8 border-[#0f8b8d] bg-white/5 rounded-l-3xl">
+                    <div class="p-6 md:p-10 border-r-8 border-[#0f8b8d] bg-white/5 rounded-l-3xl">
                         <p class="text-white font-black text-2xl mb-4 text-right">השינוי הזה לא דורש תקציבי ענק,</p>
                         <p class="text-xl text-right">להיפך, אפילו <span class="text-[#0f8b8d] font-bold">השקעה קטנה</span>, יכולה להקפיץ את העסק קדימה ובגדול.</p>
                     </div>
@@ -458,7 +476,7 @@
     <footer id="contact" class="py-24 bg-black text-center relative px-6 text-white">
         <h2 class="text-5xl md:text-9xl font-black mb-6 tracking-tighter reveal">!Let's Talk</h2>
         <p class="text-xl md:text-2xl text-gray-400 mb-16 max-w-3xl mx-auto font-light reveal" style="transition-delay: 0.12s">אני מזמין אותך לשיחת ייעוץ בחינם. רוצה לשמוע עוד?</p>
-        <div class="max-w-3xl mx-auto mb-32 bg-white/5 p-12 rounded-[2rem] border border-white/10 text-right reveal" style="transition-delay: 0.22s">
+        <div class="max-w-3xl mx-auto mb-16 md:mb-32 bg-white/5 p-6 md:p-12 rounded-[2rem] border border-white/10 text-right reveal" style="transition-delay: 0.22s">
             <form id="contactForm" class="grid grid-cols-1 md:grid-cols-2 gap-8" onsubmit="handleFormSubmit(event)">
                 <div>
                     <label class="block text-sm opacity-50 mb-3 text-white">שם מלא</label>
@@ -478,7 +496,7 @@
                 <p id="successMsg" class="md:col-span-2 text-green-400 mt-4 hidden font-bold text-xl">הפרטים נשלחו בהצלחה! דקל יחזור אליך בהקדם.</p>
             </form>
         </div>
-        <div class="flex flex-wrap justify-center gap-16 md:gap-32 text-2xl font-bold mb-40 text-white reveal" style="transition-delay: 0.32s">
+        <div class="flex flex-wrap justify-center gap-6 md:gap-32 text-2xl font-bold mb-20 md:mb-40 text-white reveal" style="transition-delay: 0.32s">
             <a href="mailto:day.light.automation@gmail.com" target="_blank" class="flex flex-row-reverse items-center gap-4 hover:text-[#0f8b8d] transition">Email <i class="fa-solid fa-envelope text-3xl"></i></a>
             <a href="tel:0544999532" target="_blank" class="flex flex-row-reverse items-center gap-4 hover:text-[#0f8b8d] transition">0544999532 <i class="fa-solid fa-phone text-3xl"></i></a>
             <a href="https://wa.me/972544999532" target="_blank" class="flex flex-row-reverse items-center gap-4 hover:text-[#0f8b8d] transition">WhatsApp <i class="fa-brands fa-whatsapp text-4xl"></i></a>
