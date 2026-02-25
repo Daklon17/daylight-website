@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         html { zoom: 0.7; }
+        @media (max-width: 768px) { html { zoom: 1; } }
 
         :root {
             --brand-teal: #0f8b8d;
@@ -140,6 +141,11 @@
             background: #111; border: 1px solid var(--glass-border); border-radius: 30px;
             max-width: 650px; width: 100%; max-height: 90vh; overflow-y: auto;
             position: relative; padding: 45px; box-shadow: 0 25px 50px -12px rgba(15, 139, 141, 0.25);
+            -webkit-overflow-scrolling: touch;
+        }
+        @media (max-width: 640px) {
+            .modal-overlay { padding: 12px; align-items: flex-end; }
+            .modal-content { padding: 20px; border-radius: 20px; max-height: 85vh; }
         }
 
         .roi-input {
@@ -217,10 +223,10 @@
                 <a href="#contact" class="px-12 py-4 bg-black text-white rounded-full hover:bg-[#0f8b8d] transition duration-300 font-bold text-2xl whitespace-nowrap">צור קשר</a>
                 <!-- Mobile hamburger -->
                 <div class="md:hidden relative">
-                    <button onclick="toggleMenu()" class="w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-xl hover:bg-gray-100 transition">
-                        <span class="w-5 h-0.5 bg-black rounded"></span>
-                        <span class="w-5 h-0.5 bg-black rounded"></span>
-                        <span class="w-5 h-0.5 bg-black rounded"></span>
+                    <button onclick="toggleMenu()" class="w-12 h-12 flex flex-col items-center justify-center gap-[5px] rounded-xl hover:bg-gray-100 transition">
+                        <span class="w-6 h-[2.5px] bg-black rounded"></span>
+                        <span class="w-6 h-[2.5px] bg-black rounded"></span>
+                        <span class="w-6 h-[2.5px] bg-black rounded"></span>
                     </button>
                     <div id="navMenu" class="hidden absolute left-0 top-12 bg-white rounded-2xl shadow-xl border border-gray-100 py-4 px-6 min-w-[200px] z-50">
                         <a href="#services" onclick="toggleMenu()" class="block py-3 text-base font-bold text-black hover:text-[#0f8b8d] transition text-right">סוגי אוטומציות</a>
@@ -241,14 +247,10 @@
             </div>
         </div>
         <h1 class="text-4xl md:text-7xl font-black mb-10 leading-tight tracking-tight text-white text-center reveal" style="transition-delay: 0.15s">
-            כשעסק הופך להיות חכם, <br>
-            <span class="text-[#0f8b8d]">הוא לא מפסיק לעבוד</span>
+            כשהעסק הופך להיות חכם, <br>
+            <span class="text-[#0f8b8d]">הוא לא מפסיק לעבוד בשבילך</span>
         </h1>
         <div class="vertical-divider mb-12 reveal" style="transition-delay: 0.25s"></div>
-        <p class="text-lg md:text-2xl text-gray-400 max-w-3xl mb-14 leading-relaxed text-center mx-auto reveal" style="transition-delay: 0.35s">
-            נעים מאוד, אני <span class="text-white font-bold">דקל</span>. אני בונה מערכות אוטומציה חכמות שמאפשרות לעסק שלכם לצמוח בזמן שאתם מתרכזים במה שחשוב.
-        </p>
-        <a href="#contact" class="bg-[#0f8b8d] hover:scale-110 transition px-12 py-4 rounded-full text-xl font-bold shadow-2xl shadow-[#0f8b8d]/40 text-white text-center reveal" style="transition-delay: 0.45s">בואו נדבר!</a>
     </header>
 
     <div class="section-separator"></div>
@@ -262,15 +264,15 @@
                         למה<br><span class="text-[#0f8b8d]">אוטומציה?</span>
                     </div>
                     <p class="text-lg md:text-xl text-gray-400 font-light max-w-lg leading-relaxed text-right">
-                        כי בשנת 2026 לא לעבוד חכם יותר <br>
+                        <span class="text-white font-black">כי בשנת 2026 לא לעבוד חכם יותר</span> <br>
                         <span class="marker-underline text-xl md:text-3xl text-white font-black mt-6 block text-white">פשוט אומר להישאר מאחור</span>
                     </p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 flex-grow w-full md:w-1/2 text-center">
                     <div class="stat-card reveal-scale" style="border-color: var(--cyan);">
-                        <div class="text-cyan text-4xl font-black mb-2">X2</div>
-                        <div class="text-gray-400 font-bold text-xl">ייעול זמן</div>
+                        <div class="text-cyan text-4xl font-black mb-2">+10</div>
+                        <div class="text-gray-400 font-bold text-xl">שעות עבודה שאפשר לחסוך כל חודש</div>
                     </div>
                     <div class="stat-card reveal-scale" style="border-color: var(--brand-teal); transition-delay: 0.12s">
                         <div class="text-[#0f8b8d] text-4xl font-black mb-2">0%</div>
@@ -423,10 +425,16 @@
                 <div class="vertical-divider h-16 mb-10 mr-0 ml-auto"></div>
                 <div class="text-xl md:text-2xl leading-relaxed space-y-10 text-gray-300">
                     <p>
-                        אחרי יותר מעשור כמנהל מוצר בהייטק שבהם הובלתי מסעות לקוח, איפיינתי תהליכי ומוצרים כך שיתנו את הערך המיטבי שלהם, החלטתי לפתוח דף נוסף - ולעזור לעסקים לעבוד חכם יותר. גיליתי עולם מרתק שבו מערכות מדברות אחת עם השנייה, סוכני AI מקפיצים את היעילות לשמיים ומשימות קורות לבד. זה נותן המון כוח לעסקים לייצר עוד ערך בקלות ולחסוך שעות של עבודה כל יום.
+                        אחרי יותר מעשור כמנהל מוצר בהייטק שבהם הובלתי מסעות לקוח, איפיינתי תהליכים ומוצרים כך שיתנו את הערך המיטבי שלהם, החלטתי לפתוח דף נוסף ולעזור לעסקים לעבוד חכם יותר.
+                    </p>
+                    <p>
+                        ברגע שראיתי בעצמי איך הטמעה של שינויים קטנים בעסק מייצרים ערך אמיתי, איך סוכני AI מקפיצים את היעילות לשמיים והעסק ממשיך לעבוד בשבילנו גם כשאנחנו ישנים, הבנתי כמה זה מטורף!
+                    </p>
+                    <p>
+                        ויותר מזה, הבנתי שעסק שלא יטמיע שינויים כאלה, ישאר הרחק מאחור...
                     </p>
                     <div class="p-10 border-r-8 border-[#0f8b8d] bg-white/5 rounded-l-3xl">
-                        <p class="text-white font-black text-2xl mb-4 text-right">הכוח הזה לא דורש תקציבי ענק,</p>
+                        <p class="text-white font-black text-2xl mb-4 text-right">השינוי הזה לא דורש תקציבי ענק,</p>
                         <p class="text-xl text-right">להיפך, אפילו <span class="text-[#0f8b8d] font-bold">השקעה קטנה</span>, יכולה להקפיץ את העסק קדימה ובגדול.</p>
                     </div>
                     <p class="text-xl md:text-2xl font-bold text-white italic">
@@ -758,11 +766,15 @@
             }
         }
 
+        const cardControllers = [];
         const cards = document.querySelectorAll('[data-card]');
+        let autoIdx = 0;
+        let autoCurrentCard = null;
+
         cards.forEach(card => {
             const canvas = card.querySelector('.particle-canvas');
             const ctx = canvas.getContext('2d');
-            let particles = [], angle = 0, isHovering = false, animationFrame;
+            let particles = [], angle = 0, isActive = false;
             canvas.width = 600; canvas.height = 600;
             canvas.style.left = `-${(600 - card.offsetWidth) / 2}px`;
             canvas.style.top = `-${(600 - card.offsetHeight) / 2}px`;
@@ -779,8 +791,8 @@
 
             const loop = () => {
                 ctx.clearRect(0, 0, 600, 600);
-                if (!isHovering && particles.length === 0) return;
-                if (isHovering) {
+                if (!isActive && particles.length === 0) return;
+                if (isActive) {
                     angle += (Math.PI * 2) / (7 * 60);
                     const r = (card.offsetWidth / 2) + 4;
                     const x = 300 + Math.cos(angle) * r, y = 300 + Math.sin(angle) * r;
@@ -789,12 +801,31 @@
                 }
                 particles = particles.filter(p => p.life > 0);
                 particles.forEach(p => { p.update(); p.draw(ctx); });
-                animationFrame = requestAnimationFrame(loop);
+                requestAnimationFrame(loop);
             };
 
-            card.addEventListener('mouseenter', () => { isHovering = true; loop(); });
-            card.addEventListener('mouseleave', () => { isHovering = false; });
+            const activate   = () => { isActive = true; loop(); };
+            const deactivate = () => { isActive = false; };
+
+            card.addEventListener('mouseenter', activate);
+            card.addEventListener('mouseleave', () => {
+                if (autoCurrentCard !== card) deactivate();
+            });
+
+            cardControllers.push({ activate, deactivate, card });
         });
+
+        // Auto-cycle through cards
+        if (cardControllers.length > 0) {
+            autoCurrentCard = cardControllers[0].card;
+            cardControllers[0].activate();
+            setInterval(() => {
+                cardControllers[autoIdx].deactivate();
+                autoIdx = (autoIdx + 1) % cardControllers.length;
+                autoCurrentCard = cardControllers[autoIdx].card;
+                cardControllers[autoIdx].activate();
+            }, 2500);
+        }
 
         // PROCESS SLALOM CANVAS
         function initProcessCanvas() {
